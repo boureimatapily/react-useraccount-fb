@@ -1,4 +1,4 @@
-import CatReducer from './CatReducer';
+import CatReducer from './reducers/CatReducer';
 import {createStore} from 'redux';
 
 

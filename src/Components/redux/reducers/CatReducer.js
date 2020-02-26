@@ -1,35 +1,30 @@
-let initalState = [
-    {userName:"Joseph",
-    email:"yorobo@arafat.mort", 
-    password: "Bank", 
-     id: "4444"
-    },
-    {userName:"Joseph",
-    email:"yorobo@arafat.mort", 
-    password: "Bank", 
-     id: "4444"
-    }   
-]
+let initialState = {
+    
+    accounts:[],
+    loading: true
+}
 
-export default function(state = initalState, action){
+
+export default (state = initialState, action)=>{
     switch(action.type){
         case "ADD_ACCOUNT":
-            return [...state, action.payload];
-        case "DELETE_ACCOUNT":
-            let accounts = state.filter(item=>{
-                return item.id!==action.payload
-            })
-            return accounts;
+            console.log('add')
+            return [...state, action.payload]
 
-        case "UPDATE_ACCOUNT":
-            let newAccounts = state.map(item=>{
-                if(item.id===action.payload.id){
+        case "DELETE_ACCOUNT":
+             return state.filter((account)=>{
+                 return account.id!==action.payload
+             })
+        case "EDIT_ACCOUNT":
+            return state.map(account=>{
+                if(account.id===action.payload.id)
                     return action.payload;
-                }else{
-                    return item;
-                }
-            });
-            return newAccounts;
+                return account;
+
+            })
+        case "UPDATE_ALL_ACCOUNTS":
+                return {accounts:action.payload, loading: false}
+            
         default:
             return state;
     }
