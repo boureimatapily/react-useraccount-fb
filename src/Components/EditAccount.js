@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Col, Row, Container, Button, Table } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { updateAccountInfo } from './redux/CatActions'
+import {  editAccount } from './redux/actions/CatActions'
 import { Link } from 'react-router-dom'
 
 class EditAccount extends React.Component {
@@ -15,7 +15,7 @@ class EditAccount extends React.Component {
             password:event.target.elements.password.value,
             
         }
-        this.props.updateAccountInfo(account)
+        this.props. editAccount(account)
         this.props.history.push('/')
     }
 
@@ -92,12 +92,12 @@ class EditAccount extends React.Component {
 }
 
 const mapDispatchToProps = {
-    updateAccountInfo
+    editAccount
 }
 
 const mapStateToProps = (state)=> {
     return {
-        accounts: state
+        accounts: state.accounts
     }
 }
 
