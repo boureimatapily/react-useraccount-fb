@@ -1,16 +1,15 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
-var Config = { 
-    apiKey: "AIzaSyCE6PuMbPkOY4rystsGq5MWfc4VfHJQi6M",
-    authDomain: "react-bank-app-4b373.firebaseapp.com",
-    databaseURL: "https://react-bank-app-4b373.firebaseio.com",
-    projectId: "react-bank-app-4b373",
-    storageBucket: "react-bank-app-4b373.appspot.com",
-    messagingSenderId: "864630194705",
-    appId: "1:864630194705:web:3ec36349cf756a982fe7b0"
-  };
-
+const Config = {
+  apiKey: "AIzaSyAiVnTdrtWLDJEi6iR2fpsX45JuzsttZgE",
+  authDomain: "user-data-1a723.firebaseapp.com",
+  databaseURL: "https://user-data-1a723.firebaseio.com",
+  projectId: "user-data-1a723",
+  storageBucket: "user-data-1a723.appspot.com",
+  messagingSenderId: "115313649025",
+  appId: "1:115313649025:web:256275d532a62cd125f480"
+};
   firebase.initializeApp(Config);
   firebase.firestore().settings({ timestampsInSnapshots: true})
 
