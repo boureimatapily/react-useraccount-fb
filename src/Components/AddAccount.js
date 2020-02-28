@@ -10,7 +10,7 @@ class AddAccount extends React.Component{
     addAccount = (event)=>{
         event.preventDefault()
         let account = {
-            id: Math.random().toString(36).substr(2, 5),
+           // id: Math.random().toString(36).substr(2, 5),
             userName:event.target.elements.userName.value,
             email:event.target.elements.email.value,
             password:event.target.elements.password.value,

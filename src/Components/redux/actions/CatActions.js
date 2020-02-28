@@ -71,7 +71,7 @@ export const getAllAccounts = ()=>{
                     }
                 })
                         dispatch({type:"UPDATE_ALL_ACCOUNTS", payload:accounts })
-            })
+            }) 
         } catch (error) {
             
         } 
@@ -91,4 +91,4 @@ export const getAllAccounts = ()=>{
 //         type:"UPDATE_ACCOUNT",
 //         payload:account
 //     }
-// }
+// }f

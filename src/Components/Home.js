@@ -37,7 +37,7 @@ class Home extends Component {
                 <tbody>
 
                 {
-                this.props.accounts.map(count=>{
+                this.props.account.map(count=>{
                     return (
                     <tr>
                         <td>{count.userName}</td>
@@ -50,7 +50,7 @@ class Home extends Component {
                                        
                                     </Button>}
 
-                                    {<Button variant="secondary"  onClick={()=>this.deleteAccount(count.id)}>                
+                                    {<Button variant="secondary"  onClick={()=>this.deleteAccounts(count.id)}>                
                                     <img src={trash}  />
                                     </Button>
                                                  }
