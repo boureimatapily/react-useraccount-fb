@@ -9,14 +9,14 @@ class EditAccount extends React.Component {
     updateAccount = (event)=>{
         event.preventDefault()
         let account = {
-            id: this.props.match.params.id,
+            //id: this.props.match.params.id,
             userName:event.target.elements.userName.value,
             email:event.target.elements.email.value,
             password:event.target.elements.password.value,
             
         }
         this.props. editAccount(account)
-        this.props.history.push('/')
+        //this.props.history.push('/')
     }
 
     render() {
@@ -48,33 +48,8 @@ class EditAccount extends React.Component {
                                             placeholder="User Name"
                                         />
                                     </Col>
+                                    <Button variant="primary" type="Submit">Update Account</Button>
                                 </Form.Group>
-                                <Form.Group as={Row} controlId="email">
-                                    <Form.Label column lg={2}>
-                                        Email
-                                </Form.Label>
-                                    <Col lg={4}>
-                                        <Form.Control type="text" name="email"
-                                            placeholder="email"
-                                            defaultValue={account.email}
-                                        />
-                                    </Col>
-                                </Form.Group>
-                                <Form.Group as={Row} controlId="password">
-                                    <Form.Label column lg={2}>
-                                        Password
-                                </Form.Label>
-                                    <Col lg={4}>
-                                        <Form.Control type="text" name="password"
-                                            placeholder="Password"
-                                            defaultValue={account.password}
-                                        />
-                                    </Col>
-                                </Form.Group>
-                               
-                                <Col className="d-flex justify-content-center">
-                            <Button variant="primary" type="Submit">Update Account</Button>
-                        </Col>
                             </Form>
                         </Col>
 
