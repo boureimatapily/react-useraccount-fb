@@ -9,6 +9,7 @@ Table Button{
 }
 .NavContent{
     margin-top: 80px;
+    margin-left: 11%;
 }
 .NavContent a {
    color: white;
@@ -33,6 +34,9 @@ Table Button{
 #maincheckbox{
     display: inline-block;
     list-style: none;
+}
+#btnlogsignup{
+   margin-left: 50%;
 }
 
 

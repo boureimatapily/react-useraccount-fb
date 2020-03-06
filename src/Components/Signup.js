@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import { Form, Col, Row, Container, Button, Table } from 'react-bootstrap'
 
 
-class Login extends Component {
+class Signup extends Component {
+
     handleSubmit=(event)=> {
         event.preventDefault();
         let account ={
-            logname:event.target.elements.logname.vlaue,
-            logpwd:event.target.elements.logpwd.value
+            signname:event.target.elements.signname.vlaue,
+            sgignpwd:event.target.elements.signpwd.value
         }
     }
-
-
 
   render() {
     return (
@@ -21,29 +20,29 @@ class Login extends Component {
                     <Row>
 
                         <Col lg={{ offset: 3 }} >
-                            <Form onSubmit={this.handleSubmit}>
-                                <Form.Group as={Row} controlId="logname">
+                            <Form>
+                                <Form.Group as={Row} controlId="sgnname">
                                     <Form.Label column lg={2}>
                                        User Name
                                      </Form.Label>
                                     <Col lg={4}>
-                                        <Form.Control type="text" name="logname"
+                                        <Form.Control type="text" name="sgnname"
                                             placeholder="User Name"
                                         />
                                     </Col>
                                     
                                 </Form.Group>
-                                <Form.Group as={Row} controlId="logpwd">
+                                <Form.Group as={Row} controlId="sgnpwd">
                                     <Form.Label column lg={2}>
                                        Password
                                      </Form.Label>
                                     <Col lg={4}>
-                                        <Form.Control type="password" name="logpwd"
+                                        <Form.Control type="password" name="signpwd"
                                             placeholder="Password"
                                         />
                                     </Col>
                                 </Form.Group>
-                                <Button variant="primary" type="Submit" id="btnlogsignup">Login</Button>
+                                <Button variant="primary" type="Submit" id="btnlogsignup">Sign up</Button>
                             </Form>
                         </Col>
 
@@ -55,4 +54,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default Signup

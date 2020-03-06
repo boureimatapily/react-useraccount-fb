@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { connect} from 'react-redux'
 import { deleteAccount, getAllAccounts } from './redux/actions/CatActions'
 import AddAccount from './AddAccount'
-import  Navbar  from './Navbar';
+
 
 class Home extends Component {
     componentDidMount(){
@@ -21,7 +21,7 @@ class Home extends Component {
         return (
             <div>  
                 <div className="headerContent">
-                <Navbar />
+                
                 <div className="mainContent">
                       
                 <Container>
