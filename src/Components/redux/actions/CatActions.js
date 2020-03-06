@@ -4,7 +4,7 @@ export const addNewAccount = (account)=>{
         let firestore = getFirestore()
         console.log(account)
         try {
-            await firestore.collection("banks").add({
+            await firestore.collection("user").add({
                 ...account,timestamp: firestore.FieldValue.serverTimestamp()})
                 console.log("done")
         } catch (error) {
@@ -22,7 +22,7 @@ export const deleteAccount = (id)=>{
 
     return (dispatch, getState,getFirestore)=>{
         let firestore = getFirestore()
-        firestore.collection("banks").doc(id).delete()
+        firestore.collection("user").doc(id).delete()
         // dispatch({
         //     type:"DELETE_ACCOUNT",
         //     payload:id
@@ -42,7 +42,7 @@ export const editAccount = (account)=>{
         let firestore = getFirestore()
         try {
             await firestore
-            .collection("banks")
+            .collection("user")
             .doc(account.id)
             .update(account)
         } catch (error) {
@@ -61,7 +61,7 @@ export const getAllAccounts = ()=>{
         let firestore = getFirestore()
         try {
             firestore
-            .collection("banks")
+            .collection("user")
             .orderBy("timestamp", "asc")
             .onSnapshot((snapshot)=>{
                 let accounts = snapshot.docs.map((doc)=>{

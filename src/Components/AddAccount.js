@@ -12,7 +12,6 @@ class AddAccount extends React.Component{
         let account = {
            // id: Math.random().toString(36).substr(2, 5),
             userName:event.target.elements.userName.value,
-            
         }
         this.props.addNewAccount(account)
         // this.props.history.push('/')

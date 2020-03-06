@@ -27,11 +27,7 @@ class Home extends Component {
                         <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>User Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        
-                        
+                        <th>User Name</th>                
                     </tr>
                 </thead>
                 <tbody>
@@ -41,8 +37,6 @@ class Home extends Component {
                     return (
                     <tr>
                         <td>{count.userName}</td>
-                    <td>{count.email}</td>
-                    <td>{count.password}</td>
                     <td>
                         {
                                 <Button  variant="secondary" >

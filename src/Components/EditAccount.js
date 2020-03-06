@@ -9,14 +9,11 @@ class EditAccount extends React.Component {
     updateAccount = (event)=>{
         event.preventDefault()
         let account = {
-            //id: this.props.match.params.id,
+            id: this.props.match.params.id,
             userName:event.target.elements.userName.value,
-            email:event.target.elements.email.value,
-            password:event.target.elements.password.value,
-            
         }
         this.props. editAccount(account)
-        //this.props.history.push('/')
+        this.props.history.push('/')
     }
 
     render() {
