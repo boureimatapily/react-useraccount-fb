@@ -7,8 +7,28 @@ Table Button{
     margin-right: 10px;
     background-color: blue;
 }
-.mainContent{
-    margin-top: 200px;
+.NavContent{
+    margin-top: 80px;
+}
+.NavContent a {
+   color: white;
+   font-weight: bolder;
+} 
+.NavContent Button{
+  margin-right: 5px;
+ }
+.mainContent{  
+    width: 70%x;
+}
+.mainContent Table td,th{  
+    color: black;
+    font-weight: bold;
+}
+.headerContent{
+    background-color: rgb(219, 219, 219);
+    width: 70%;
+    height: 50%;
+    margin-left: 15%;
 }
 #maincheckbox{
     display: inline-block;

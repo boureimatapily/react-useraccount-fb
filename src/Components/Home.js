@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { connect} from 'react-redux'
 import { deleteAccount, getAllAccounts } from './redux/actions/CatActions'
 import AddAccount from './AddAccount'
+import  Navbar  from './Navbar';
 
 class Home extends Component {
     componentDidMount(){
@@ -18,7 +19,9 @@ class Home extends Component {
     render() {
         
         return (
-            <div>   
+            <div>  
+                <div className="headerContent">
+                <Navbar />
                 <div className="mainContent">
                       
                 <Container>
@@ -71,6 +74,7 @@ class Home extends Component {
                     </Row>
                 </Container>
                 </div>  
+                </div> 
             </div>
         )
     }
