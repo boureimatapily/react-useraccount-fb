@@ -12,8 +12,7 @@ class AddAccount extends React.Component{
         let account = {
            // id: Math.random().toString(36).substr(2, 5),
             userName:event.target.elements.userName.value,
-            email:event.target.elements.email.value,
-            password:event.target.elements.password.value,
+            
         }
         this.props.addNewAccount(account)
         // this.props.history.push('/')
@@ -38,29 +37,10 @@ class AddAccount extends React.Component{
                                              placeholder="User Name"
                                              />
                                     </Col>
-                                </Form.Group>
-                                <Form.Group as={Row} controlId="email">
-                                    <Form.Label column lg={2}>
-                                        Email
-                                </Form.Label>
-                                    <Col lg={4}>
-                                        <Form.Control type="text" name="email"
-                                         placeholder="email"
-                                            />
-                                    </Col>
-                                </Form.Group>
-                                <Form.Group as={Row} controlId="password">
-                                    <Form.Label column lg={2}>
-                                        Password
-                                </Form.Label>
-                                    <Col lg={4}>
-                                        <Form.Control type="password" name="password"
-                                             placeholder="Password"
-                                            />
-                                    </Col>
+                                    <Button variant="primary" type="submit">Add Name</Button>
                                 </Form.Group>
                                 <Col className="d-flex justify-content-center">
-                            <Button variant="primary" type="submit">Add Account</Button>
+                            
                         </Col>
                             </Form>
                         </Col>
