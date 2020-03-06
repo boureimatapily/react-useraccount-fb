@@ -33,7 +33,7 @@ class EditAccount extends React.Component {
                         <Col lg={{ offset: 3 }} >
                             <Form onSubmit={this.updateAccount}>
                                 <Link to="/">
-                                    <p>Accounts</p>
+                                    <Button>CANCEL</Button>
                                 </Link>
                                 <Form.Group as={Row} controlId="userName">
                                     <Form.Label column lg={2}>
@@ -45,7 +45,7 @@ class EditAccount extends React.Component {
                                             placeholder="User Name"
                                         />
                                     </Col>
-                                    <Button variant="primary" type="Submit">Update Account</Button>
+                                    <Button variant="primary" type="Submit">Update Name</Button>
                                 </Form.Group>
                             </Form>
                         </Col>

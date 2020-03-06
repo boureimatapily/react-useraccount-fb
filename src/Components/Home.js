@@ -18,7 +18,9 @@ class Home extends Component {
     render() {
         
         return (
-            <div>       
+            <div>   
+                <div className="mainContent">
+                      
                 <Container>
                    <AddAccount />
                    
@@ -27,7 +29,8 @@ class Home extends Component {
                         <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>User Name</th>                
+                        <th>User Name</th>   
+                        <td>PAID</td>             
                     </tr>
                 </thead>
                 <tbody>
@@ -37,17 +40,23 @@ class Home extends Component {
                     return (
                     <tr>
                         <td>{count.userName}</td>
+                        <td> { <Form.Control type="checkbox" name="maincheckbox" id="maincheckbox" />}</td>
+                     
                     <td>
-                        {
-                                <Button  variant="secondary" >
+
+                   
+                         
+                                {<Button  variant="secondary" >
                                          <Link to={"/edit/" + count.id}>  <img src={pencil} /> </Link>
                                        
                                     </Button>}
-
+                                   
                                     {<Button variant="secondary"  onClick={()=>this.deleteAccounts(count.id)}>                
                                     <img src={trash}  />
                                     </Button>
                                                  }
+                                   
+                            
                                 </td>
                     </tr>
                     )
@@ -61,6 +70,7 @@ class Home extends Component {
                         </Col>
                     </Row>
                 </Container>
+                </div>  
             </div>
         )
     }
