@@ -1,22 +1,23 @@
 import firebase from '../Config'
 import thunk from 'redux-thunk'
-import { reactReduxFirebase, getFirebase} from 'react-redux-firebase'
 import { reduxFirestore, getFirestore} from 'redux-firestore'
 import CatReducer from './reducers/CatReducer';
-import { firebaseReducer } from 'react-redux-firebase'
 import {createStore,combineReducers ,applyMiddleware, compose} from 'redux';
+import { getFirebase, reduxReactFirebase,firebaseReducer  } from 'react-redux-firebase';
 
 
-let combReducers = combineReducers{
+
+ let combReducers = combineReducers({
     user:CatReducer,
     firebase:firebaseReducer,
-}
+})
 
 let reduxstore  = createStore(
     combReducers,
      compose(
-    applyMiddleware(thunk.withExtraArgument(getFirestore)),
+    applyMiddleware(thunk.withExtraArgument({getFirestore,getFirebase})),
     reduxFirestore(firebase),
+    reduxReactFirebase(firebase)
      )
 
     );

@@ -66,7 +66,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state)=> {
     return {
-        accounts: state.accounts
+        accounts: state.user.accounts
     }
 }
 

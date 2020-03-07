@@ -5,6 +5,7 @@ import { Form, Col, Row, Container, Button, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { connect} from 'react-redux'
 import { deleteAccount, getAllAccounts } from './redux/actions/CatActions'
+import { logoutUser  } from './redux/actions/authActions';
 import AddAccount from './AddAccount'
 
 
@@ -23,8 +24,10 @@ class Home extends Component {
                 <div className="headerContent">
                 
                 <div className="mainContent">
+                
                       
                 <Container>
+                <a onClick={this.props.logoutUser}><Button>Logout</Button></a>
                    <AddAccount />
                    
                     <Row>
@@ -83,12 +86,14 @@ class Home extends Component {
 const mapStateToProps = (state)=>{
     console.log(state)
     return {
-        account: state.accounts
+        account: state.user.accounts
     }
 }
 
 const mapDispatchToProps = {
-    deleteAccount, getAllAccounts
+    deleteAccount, 
+    getAllAccounts,
+    logoutUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

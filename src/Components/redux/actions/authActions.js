@@ -1,4 +1,4 @@
-export const createNewUser = (email,password)=>{
+export const createNewUser = (email,password, onSuccess)=>{
 
     return (dispatch, getState,{getFirebase})=>{
         let firebase = getFirebase()
@@ -51,7 +51,7 @@ export const logoutUser = ()=>{
 export const authenticateWithGoogle = (onSuccess)=>{
     return (dispatch, getState,{getFirebase})=>{
         let firebase = getFirebase()
-        const provider = new firebase.auth.GoogleAuthProvider()
+        const provider = new firebase.auth.GoogleAuthProvider();
         firebase
             .auth().signInWithPopup(provider)
             .then((user)=>{
