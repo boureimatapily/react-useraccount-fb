@@ -6,6 +6,7 @@ import EditAccount from './Components/EditAccount';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Navbar from './Components/Navbar';
+import ProtectedRoute from './Components/ProtectedRoute'
 
 
 class App extends React.Component {
@@ -14,10 +15,10 @@ class App extends React.Component {
       <BrowserRouter>
           <Navbar />
           <Switch>
-          <Route exact path="/signup" component={Signup} />
-                <Route exact path="/" component={Home} />
-                <Route exact path="/add" component={AddAccount} />
-                <Route exact path="/edit/:id" component={EditAccount} />
+                <Route exact path="/signup" component={Signup} />
+                <ProtectedRoute exact path="/" component={Home} />
+                <ProtectedRoute exact path="/add" component={AddAccount} />
+                <ProtectedRoute exact path="/edit/:id" component={EditAccount} />
                 <Route exact path="/login" component={Login} />
             
           </Switch>

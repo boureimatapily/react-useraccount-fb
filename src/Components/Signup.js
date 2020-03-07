@@ -4,12 +4,15 @@ import { Form, Col, Row, Container, Button, Table } from 'react-bootstrap'
 import { createNewUser } from './redux/actions/authActions';
 
 class Signup extends Component {
+    onLogin = ()=>{
+        this.props.history.push('/login');
+    }
 
     handleSubmit=(event)=> {
         event.preventDefault();
         let email = event.target.elements.email.value;
         let password = event.target.elements.password.value;
-        this.props.createNewUser(email,password)
+        this.props.createNewUser(email,password,this.onLogin)
     }
 
   render() {
@@ -20,10 +23,10 @@ class Signup extends Component {
                     <Row>
 
                         <Col lg={{ offset: 3 }} >
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
                                 <Form.Group as={Row} controlId="email">
                                     <Form.Label column lg={2}>
-                                       User Name
+                                       Email
                                      </Form.Label>
                                     <Col lg={4}>
                                         <Form.Control type="text" name="email"
