@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { Form, Col, Row, Container, Button, Table } from 'react-bootstrap'
-
+import { createNewUser } from './redux/actions/authActions';
 
 class Signup extends Component {
 
     handleSubmit=(event)=> {
         event.preventDefault();
-        let account ={
-            signname:event.target.elements.signname.vlaue,
-            sgignpwd:event.target.elements.signpwd.value
-        }
+        let email = event.target.elements.email.value;
+        let password = event.target.elements.password.value;
+        this.props.createNewUser(email,password)
     }
 
   render() {
@@ -21,23 +21,23 @@ class Signup extends Component {
 
                         <Col lg={{ offset: 3 }} >
                             <Form>
-                                <Form.Group as={Row} controlId="sgnname">
+                                <Form.Group as={Row} controlId="email">
                                     <Form.Label column lg={2}>
                                        User Name
                                      </Form.Label>
                                     <Col lg={4}>
-                                        <Form.Control type="text" name="sgnname"
+                                        <Form.Control type="text" name="email"
                                             placeholder="User Name"
                                         />
                                     </Col>
                                     
                                 </Form.Group>
-                                <Form.Group as={Row} controlId="sgnpwd">
+                                <Form.Group as={Row} controlId="password">
                                     <Form.Label column lg={2}>
                                        Password
                                      </Form.Label>
                                     <Col lg={4}>
-                                        <Form.Control type="password" name="signpwd"
+                                        <Form.Control type="password" name="password"
                                             placeholder="Password"
                                         />
                                     </Col>
@@ -54,4 +54,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default connect(null,{createNewUser})(Signup)
