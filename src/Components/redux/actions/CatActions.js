@@ -1,6 +1,6 @@
 export const addNewAccount = (account)=>{
 
-    return async(dispatch, getState,getFirestore)=>{
+    return async(dispatch, getState,{getFirestore})=>{
         let firestore = getFirestore()
         console.log(account)
         try {
@@ -20,7 +20,7 @@ export const addNewAccount = (account)=>{
 
 export const deleteAccount = (id)=>{
 
-    return (dispatch, getState,getFirestore)=>{
+    return (dispatch, getState,{getFirestore})=>{
         let firestore = getFirestore()
         firestore.collection("user").doc(id).delete()
         // dispatch({
@@ -38,7 +38,7 @@ export const deleteAccount = (id)=>{
 }
 
 export const editAccount = (account)=>{
-    return async(dispatch, getState,getFirestore)=>{
+return async(dispatch, getState,{getFirestore})=>{
         let firestore = getFirestore()
         try {
             await firestore
@@ -57,7 +57,7 @@ export const editAccount = (account)=>{
 
 
 export const getAllAccounts = ()=>{
-    return (dispatch, getState,getFirestore)=>{
+    return (dispatch, getState,{getFirestore})=>{
         let firestore = getFirestore()
         try {
             firestore
